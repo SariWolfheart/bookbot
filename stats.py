@@ -32,3 +32,22 @@ def get_number_of_characters(text):
 
     return characters
 
+def sort_on(dict):
+    return dict["num"]
+
+def get_stats(chardict):
+
+    stats = []
+
+
+    for char in chardict:
+        char_count = chardict[char]
+        # if char.isalpha():
+        new_dict = {
+            "char": char,
+            "num": char_count
+        }
+        stats.append(new_dict)
+
+    stats.sort(reverse=True, key=sort_on)
+    return stats
